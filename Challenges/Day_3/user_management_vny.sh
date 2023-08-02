@@ -26,9 +26,9 @@ then
                 fi
         ;;
         "-d" | "--delete")
-                read -p "Enter the username to delete: " USR_NAME
-                EXIST_STATUS=$(cat /etc/passwd | awk -F':' '{print $1}' | grep $USR_NAME)
-                if [[ -z $EXIT_STATUS ]]
+               read -p "Enter the username to delete: " USR_NAME
+               STATUS=$(cat /etc/passwd | awk -F':' '{print $1}' | grep $USR_NAME)
+	       if [[ -z $STATUS ]]
                 then
                         echo "Error: The username '$USR_NAME' does not exist. Please enter a valid username."
                 else
