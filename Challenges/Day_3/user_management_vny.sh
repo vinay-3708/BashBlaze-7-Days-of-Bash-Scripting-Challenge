@@ -20,7 +20,7 @@ then
                 then
                         read -s -p "Enter the password for $USR_NAME username: " PSS
                         useradd -p $PSS $USR_NAME
-                        echo "User account '$USR_NAME' is created successfully."
+                        echo -e "\nUser account '$USR_NAME' is created successfully."
                 else
                         echo -e "Error: The username '$USR_NAME' already exists. Please choose a different name."
                 fi
@@ -33,7 +33,7 @@ then
                         echo "Error: The username '$USR_NAME' does not exist. Please enter a valid username."
                 else
                         userdel $USR_NAME
-                        echo "User account '$USR_NAME' is deleted successfully."
+                        echo -e "\nUser account '$USR_NAME' is deleted successfully."
                 fi
         ;;
         "-r" | "--reset")
@@ -45,7 +45,7 @@ then
                 else
                         read -s -p "Enter the new password for username '$USR_NAME' : " PSS
                         echo "$USR_NAME:$PSS" | sudo chpasswd
-                        echo "Password for username '$USR_NAME' has changed successfully."
+                        echo -e "\nPassword for username '$USR_NAME' has changed successfully."
                 fi
         ;;
         "-l" | "--list")
